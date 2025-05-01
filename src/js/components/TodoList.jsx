@@ -10,7 +10,7 @@ const addTodo = (text) => {
 }
 
 const toggleComplete = (id) => {
-    setTodos(todos.map(todo)=>todo.id === id ? {...todo, completed: !todo.completed})
+    setTodos(todos.map(todo) => todo.id === id ? {...todo, completed: !todo.completed})
 }
 
 
