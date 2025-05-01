@@ -19,7 +19,7 @@ return (
         <h1>Todo List</h1>
         <TodoForm addTodo={addTodo}/>
         <ul>
-            {todos.map(todo)=>(
+            {todos.map(todo) => (
                 <todoItem 
                 key={todo.id}
                 todo={todo}
