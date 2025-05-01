@@ -4,13 +4,13 @@ import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
 const TodoList = () => {
-const [todos setTodos] = useState([]);
+const [todos, setTodos] = useState([]);
 const addTodo = (text) => {
     setTodos([...todos, {id: Date.now(), text, completed: false}])
 }
 
 const toggleComplete = (id) => {
-    setTodos(todos.map(todo) => todo.id === id ? {...todo, completed: !todo.completed})
+    setTodos(todos.map(todo) => (todo.id === id ? {...todo, completed: !todo.completed})
 }
 
 
