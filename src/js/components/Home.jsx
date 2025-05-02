@@ -41,7 +41,7 @@ const Home = () => {
             type="text"
             value={newTodo}
             onChange={handleInputChange}
-            placeholder="Add new todo"
+            placeholder="What needs to be done?"
           />
           {/* <button onClick={handleAddTodo}>Add</button> */}
           <FaPlus onClick={handleAddTodo} />
