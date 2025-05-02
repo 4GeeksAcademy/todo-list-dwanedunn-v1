@@ -1,28 +1,72 @@
 import React from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
+import { useState } from "react";
+import { FaRegTrashCan } from "react-icons/fa6";
+import { FaPlus } from "react-icons/fa";
 
 //create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+  const [todos, setTodos] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+  const handleInputChange = (e) => {
+    setNewTodo(e.target.value);
+  };
+
+  const handleAddTodo = () => {
+    if (newTodo.trim() !== "") {
+      setTodos([...todos, { text: newTodo, completed: false }]);
+      setNewTodo("");
+    }
+  };
+
+  const handleDeleteTodo = (index) => {
+    const newTodos = [...todos];
+    newTodos.splice(index, 1);
+    setTodos(newTodos);
+  };
+
+  const handleToggleComplete = (index) => {
+    const newTodos = [...todos];
+    newTodos[index].completed = !newTodos[index].completed;
+    setTodos(newTodos);
+  };
+  return (
+    <div className="app">
+      <h1>todos</h1>
+      <section className="todo-entry">
+        <div className="todo-form">
+          <input
+            className="todo-input"
+            type="text"
+            value={newTodo}
+            onChange={handleInputChange}
+            placeholder="Add new todo"
+          />
+          {/* <button onClick={handleAddTodo}>Add</button> */}
+          <FaPlus onClick={handleAddTodo} />
+        </div>
+      </section>
+
+      <ul className="todo-list">
+        {todos.map((todo, index) => (
+          <li
+            key={index}
+            className={`todo-item ${todo.completed ? "completed" : ""}`}
+          >
+            <input
+              type="checkbox"
+              checked={todo.completed}
+              onChange={() => handleToggleComplete(index)}
+            />
+            <span>{todo.text}</span>
+            {/* <button onClick={() => handleDeleteTodo(index)}>Delete</button> */}
+            <FaRegTrashCan onClick={() => handleDeleteTodo(index)} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Home;
