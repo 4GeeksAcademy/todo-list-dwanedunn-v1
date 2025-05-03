@@ -31,6 +31,7 @@ const Home = () => {
     newTodos[index].completed = !newTodos[index].completed;
     setTodos(newTodos);
   };
+
   return (
     <div className="app">
       <h1>todos</h1>
