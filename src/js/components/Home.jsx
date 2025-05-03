@@ -4,7 +4,8 @@ import { useState } from "react";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { FaPlus } from "react-icons/fa";
 
-//create your first component
+import Header from "./Header";
+
 const Home = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState("");
@@ -34,7 +35,8 @@ const Home = () => {
 
   return (
     <div className="app">
-      <h1>todos</h1>
+      <Header />
+
       <section className="todo-entry">
         <div className="todo-form">
           <input
