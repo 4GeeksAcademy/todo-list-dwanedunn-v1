@@ -1,23 +1,29 @@
-import React from "react";
+import React from 'react';
 
-import { useState } from "react";
-import { FaRegTrashCan } from "react-icons/fa6";
-import { FaPlus } from "react-icons/fa";
+import { useState } from 'react';
+import { FaRegTrashCan } from 'react-icons/fa6';
+import { FaPlus } from 'react-icons/fa';
 
-import Header from "./Header";
+import Header from './Header';
 
 const Home = () => {
   const [todos, setTodos] = useState([]);
-  const [newTodo, setNewTodo] = useState("");
+  const [newTodo, setNewTodo] = useState('');
 
   const handleInputChange = (e) => {
     setNewTodo(e.target.value);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleAddTodo();
+    }
+  };
+
   const handleAddTodo = () => {
-    if (newTodo.trim() !== "") {
+    if (newTodo.trim() !== '') {
       setTodos([...todos, { text: newTodo, completed: false }]);
-      setNewTodo("");
+      setNewTodo('');
     }
   };
 
@@ -44,6 +50,7 @@ const Home = () => {
             type="text"
             value={newTodo}
             onChange={handleInputChange}
+            onKeyDown={handleKeyPress}
             placeholder="What needs to be done?"
           />
           {/* <button onClick={handleAddTodo}>Add</button> */}
@@ -55,7 +62,7 @@ const Home = () => {
         {todos.map((todo, index) => (
           <li
             key={index}
-            className={`todo-item ${todo.completed ? "completed" : ""}`}
+            className={`todo-item ${todo.completed ? 'completed' : ''}`}
           >
             <input
               type="checkbox"
