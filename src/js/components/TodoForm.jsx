@@ -20,6 +20,7 @@ const TodoForm = ({ addTodo }) => {
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               e.preventDefault();
+              console.log('Enter key pressed');
               if (text.trim() !== '') {
                 addTodo(text);
                 setText('');
