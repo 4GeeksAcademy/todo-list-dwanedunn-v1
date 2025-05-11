@@ -1,13 +1,13 @@
-import { useState } from "react";
+import { useState } from 'react';
 
 const TodoForm = ({ addTodo }) => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (text.trim() !== "") {
+    if (text.trim() !== '') {
       addTodo(text);
-      setText("");
+      setText('');
     }
   };
   return (
@@ -17,6 +17,15 @@ const TodoForm = ({ addTodo }) => {
           type="text"
           value={text}
           onChange={(e) => setText(e.target.value)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') {
+              e.preventDefault();
+              if (text.trim() !== '') {
+                addTodo(text);
+                setText('');
+              }
+            }
+          }}
           placeholder="Add New Todo..."
         />
         <button type="submit">Add</button>

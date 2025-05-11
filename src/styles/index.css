@@ -10,9 +10,10 @@
 
 */
 
-/* root {
+body {
   --primary-bg: hsl(42, 100%, 95.7%);
-} */
+  background-color: var(--primary-bg);
+}
 
 .todo-form {
   margin-bottom: 20px;
