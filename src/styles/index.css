@@ -53,14 +53,6 @@ body {
   color: #888;
 }
 
-.todo-trash {
-  /* background-color: #dc3545; */
-  /* color: #fff; */
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer;
-}
-
 .header {
   text-align: center;
   font-weight: lighter;
