@@ -14,18 +14,15 @@ body {
 
 .todo-form {
   margin-bottom: 20px;
-  /* border: 1px solid red; */
 }
 
 .todo-input {
   margin-left: 40%;
   padding: 10px;
-  /* border: 1px solid red; */
   margin-right: 10px;
 }
 
 .todo-list {
-  /* border: 1px solid red; test/show where list is on page*/
   list-style: none;
   padding: 0;
 }
