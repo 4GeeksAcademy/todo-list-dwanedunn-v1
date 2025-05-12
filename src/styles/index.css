@@ -1,6 +1,5 @@
 .app {
   background-color: var(--secondary-bg);
-  border: 1px solid red;
   width: 500px;
   margin: 0 auto;
 }
