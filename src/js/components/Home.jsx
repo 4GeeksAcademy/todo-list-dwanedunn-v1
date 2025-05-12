@@ -6,6 +6,7 @@ import { FaPlus } from 'react-icons/fa';
 
 import Header from './Header';
 
+// HANDLER FUNCTIONS
 const Home = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
@@ -43,6 +44,7 @@ const Home = () => {
     <div className="app">
       <Header />
 
+      {/* TODO FORM - START */}
       <section className="todo-entry">
         <div className="todo-form">
           <input
@@ -57,7 +59,8 @@ const Home = () => {
           <FaPlus onClick={handleAddTodo} />
         </div>
       </section>
-
+      {/* TODO FORM - END */}
+      {/* TODO LIST - START */}
       <ul className="todo-list">
         {todos.map((todo, index) => (
           <li
@@ -77,6 +80,7 @@ const Home = () => {
           </li>
         ))}
       </ul>
+      {/* TODO LIST - END */}
     </div>
   );
 };

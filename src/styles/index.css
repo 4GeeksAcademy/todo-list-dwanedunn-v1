@@ -10,6 +10,12 @@
 
 */
 
+.app {
+  border: 1px solid red;
+  width: 500px;
+  margin: 0 auto;
+}
+
 body {
   --primary-bg: hsl(42, 100%, 95.7%);
   background-color: var(--primary-bg);
@@ -24,14 +30,6 @@ body {
   border: 1px solid #ccc;
   margin-right: 10px;
 }
-
-/* .todo-form button {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-} */
 
 .todo-list {
   list-style: none;
