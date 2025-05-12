@@ -1,5 +1,4 @@
 import React from 'react';
-import { FaPlus } from 'react-icons/fa';
 
 const TodoForm = ({
   newTodo,
@@ -18,7 +17,6 @@ const TodoForm = ({
           onKeyDown={handleKeyPress}
           placeholder="What needs to be done?"
         />
-        {/* <FaPlus onClick={handleAddTodo} /> */}
       </div>
     </section>
   );
