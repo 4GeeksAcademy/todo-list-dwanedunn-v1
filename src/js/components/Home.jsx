@@ -56,7 +56,7 @@ const Home = () => {
             placeholder="What needs to be done?"
           />
           {/* <button onClick={handleAddTodo}>Add</button> */}
-          <FaPlus onClick={handleAddTodo} />
+          {/* <FaPlus onClick={handleAddTodo} /> */}
         </div>
       </section>
       {/* TODO FORM - END */}
