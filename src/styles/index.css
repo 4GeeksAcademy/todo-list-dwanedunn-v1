@@ -19,19 +19,19 @@ body {
   margin-bottom: 20px;
 }
 
-.todo-form input {
+.todo-input {
   padding: 10px;
   border: 1px solid #ccc;
   margin-right: 10px;
 }
 
-.todo-form button {
+/* .todo-form button {
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
   border: none;
   cursor: pointer;
-}
+} */
 
 .todo-list {
   list-style: none;

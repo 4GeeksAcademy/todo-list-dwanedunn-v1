@@ -70,7 +70,6 @@ const Home = () => {
               onChange={() => handleToggleComplete(index)}
             />
             <span>{todo.text}</span>
-            {/* <button onClick={() => handleDeleteTodo(index)}>Delete</button> */}
             <FaRegTrashCan onClick={() => handleDeleteTodo(index)} />
           </li>
         ))}
