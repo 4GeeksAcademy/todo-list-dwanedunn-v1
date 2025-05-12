@@ -28,6 +28,13 @@ body {
   padding: 0;
 }
 
+/* .todo-text:hover {
+  background-color: white;
+
+  padding: 4px;
+  cursor: pointer;
+} */
+
 .todo-item {
   margin: auto;
   max-width: 400px;

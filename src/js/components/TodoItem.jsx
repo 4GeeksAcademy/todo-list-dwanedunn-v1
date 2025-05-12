@@ -9,7 +9,7 @@ const TodoItem = ({ todo, index, handleToggleComplete, handleDeleteTodo }) => {
         checked={todo.completed}
         onChange={() => handleToggleComplete(index)}
       />
-      <span>{todo.text}</span>
+      <span className="todo-text">{todo.text}</span>
       <FaRegTrashCan
         className="todo-trash"
         onClick={() => handleDeleteTodo(index)}
