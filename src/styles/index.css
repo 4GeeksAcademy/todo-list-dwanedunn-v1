@@ -58,3 +58,10 @@ body {
   padding: 5px 10px;
   cursor: pointer;
 }
+
+.header {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 5em;
+  color: whitesmoke;
+}
