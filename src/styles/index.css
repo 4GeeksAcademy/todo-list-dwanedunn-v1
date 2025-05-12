@@ -1,4 +1,5 @@
 .app {
+  background-color: var(--secondary-bg);
   border: 1px solid red;
   width: 500px;
   margin: 0 auto;
@@ -6,6 +7,8 @@
 
 body {
   --primary-bg: hsl(42, 100%, 95.7%);
+  --secondary-bg: hsl(60, 100%, 96%);
+
   background-color: var(--primary-bg);
 }
 
@@ -20,6 +23,7 @@ body {
 }
 
 .todo-list {
+  /* border: 1px solid red; test/show where list is on page*/
   list-style: none;
   padding: 0;
 }
