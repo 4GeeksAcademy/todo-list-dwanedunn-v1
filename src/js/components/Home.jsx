@@ -3,6 +3,7 @@ import Header from './Header';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
 
+// Handle Functions
 const Home = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
