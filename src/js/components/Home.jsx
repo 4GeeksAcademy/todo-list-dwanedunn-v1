@@ -1,12 +1,8 @@
-import React from 'react';
-
-import { useState } from 'react';
-import { FaRegTrashCan } from 'react-icons/fa6';
-import { FaPlus } from 'react-icons/fa';
-
+import React, { useState } from 'react';
 import Header from './Header';
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 
-// HANDLER FUNCTIONS
 const Home = () => {
   const [todos, setTodos] = useState([]);
   const [newTodo, setNewTodo] = useState('');
@@ -43,44 +39,17 @@ const Home = () => {
   return (
     <div className="app">
       <Header />
-
-      {/* TODO FORM - START */}
-      <section className="todo-entry">
-        <div className="todo-form">
-          <input
-            className="todo-input"
-            type="text"
-            value={newTodo}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyPress}
-            placeholder="What needs to be done?"
-          />
-          {/* <button onClick={handleAddTodo}>Add</button> */}
-          {/* <FaPlus onClick={handleAddTodo} /> */}
-        </div>
-      </section>
-      {/* TODO FORM - END */}
-      {/* TODO LIST - START */}
-      <ul className="todo-list">
-        {todos.map((todo, index) => (
-          <li
-            key={index}
-            className={`todo-item ${todo.completed ? 'completed' : ''}`}
-          >
-            <input
-              type="checkbox"
-              checked={todo.completed}
-              onChange={() => handleToggleComplete(index)}
-            />
-            <span>{todo.text}</span>
-            <FaRegTrashCan
-              className="todo-trash"
-              onClick={() => handleDeleteTodo(index)}
-            />
-          </li>
-        ))}
-      </ul>
-      {/* TODO LIST - END */}
+      <TodoForm
+        newTodo={newTodo}
+        handleInputChange={handleInputChange}
+        handleKeyPress={handleKeyPress}
+        handleAddTodo={handleAddTodo}
+      />
+      <TodoList
+        todos={todos}
+        handleToggleComplete={handleToggleComplete}
+        handleDeleteTodo={handleDeleteTodo}
+      />
     </div>
   );
 };
